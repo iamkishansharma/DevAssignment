@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/spinner_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_item_bg"
+        android:clickable="true"
+        android:dropDownSelector="#fff"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:popupBackground="@drawable/list_item_bg"
+        android:textColor="#fff"
+        android:textColorLink="#fff"
+        android:textSize="18sp" />
+
+</RelativeLayout>
