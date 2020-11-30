@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg_black"
     android:gravity="center"
+    android:id="@+id/relative_lay"
     tools:context=".MainActivity">
 
     <Spinner

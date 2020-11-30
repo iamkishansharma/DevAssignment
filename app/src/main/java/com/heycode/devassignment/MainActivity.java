@@ -1,18 +1,23 @@
 package com.heycode.devassignment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     Spinner mSpinner;
+    RelativeLayout relative_lay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         mSpinner = findViewById(R.id.spinner_option);
 
+        relative_lay = findViewById(R.id.relative_lay);
         //Select option features
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(
@@ -35,24 +41,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position > 0) {
-                    switch (position) {
-                        case 1:
-                            Toast.makeText(MainActivity.this, adapter.getItem(position), Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                            intent.putExtra("getOption", position);
-                            startActivity(intent);
-                            break;
-                        case 2:
-                            //TODO::2nd
-                            break;
-                        case 3:
-                            //TODO::3rd
-                            break;
-                        default:
-                            Toast.makeText(MainActivity.this, "Choose any option", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(MainActivity.this, adapter.getItem(position), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    intent.putExtra("getOption", position);
+                    startActivity(intent);
                 } else {
-                    Toast.makeText(MainActivity.this, "Please select one", Toast.LENGTH_LONG).show();
+                    Snackbar snackbar = Snackbar.make(relative_lay, "Please select One", Snackbar.LENGTH_LONG);
+                    snackbar.setBackgroundTint(Color.RED)
+                            .setTextColor(Color.WHITE);
+                    snackbar.show();
                 }
             }
 
