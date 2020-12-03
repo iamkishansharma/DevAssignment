@@ -2,7 +2,7 @@
 
 ##################################
 1. Retrofit is used to call the api
-2. All data and regex are comming from API
+2. All data and regex are coming from API
 3. Screenshots & Working Video of this App is attached
 4. UI improvement can be done
 
