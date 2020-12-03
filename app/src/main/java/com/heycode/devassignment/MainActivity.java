@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Snackbar snackbar = Snackbar.make(relative_lay, "Please select One", Snackbar.LENGTH_LONG);
                     snackbar.setBackgroundTint(Color.RED)
-                            .setTextColor(Color.WHITE);
+                            .setTextColor(getColor(R.color.teal_200));
                     snackbar.show();
                 }
             }
@@ -57,5 +57,11 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mSpinner.setSelection(0);
     }
 }

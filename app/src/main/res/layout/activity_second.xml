@@ -21,7 +21,7 @@
             android:maxLength="20" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
+    <!--    For 1st&2nd Option taking Customer No and for 3rd Option taking Email-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/filledTextField2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -29,14 +29,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/filledTextField1"
         android:layout_margin="10dp">
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/customer_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="20" />
     </com.google.android.material.textfield.TextInputLayout>
-<!--    for 2nd-->
+
+    <!--    For 2nd & 3rd Option selecting Month-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/filledTextField3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -45,38 +45,64 @@
         android:layout_above="@id/filledTextField2"
         android:visibility="invisible"
         android:layout_margin="10dp">
-
         <AutoCompleteTextView
+            android:inputType="none"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/selectDate"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="wrap_content"
+    <!--    For 3rd Option taking Phone No-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField4"
+        android:visibility="gone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/filledTextField2">
-
-        <TextView
-            android:id="@+id/textViewResult"
+        android:layout_below="@id/filledTextField2"
+        android:layout_margin="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_no"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="20sp" />
-    </androidx.core.widget.NestedScrollView>
+            android:maxLength="20" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    For 3rd Option taking Name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField5"
+        android:visibility="gone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filledTextField4"
+        android:layout_margin="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/full_name"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:id="@+id/fab"
         android:layout_margin="20sp"
         android:src="@drawable/arrow_forward" />
 
-    <ProgressBar
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/progress_bar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        style="@style/SpinKitView.Large.Circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:backgroundTint="@color/design_default_color_error" />
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/teal_200" />
 </RelativeLayout>
